@@ -16,7 +16,9 @@ public class MouseMaze {
      */
     public static void main(String[] args) {
        Maze m = new Maze();
+       m.PlaceCheese();
+       m.PlaceMouse();
        m.stampa();
     }
-    
+
 }
