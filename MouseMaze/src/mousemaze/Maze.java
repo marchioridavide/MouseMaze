@@ -15,6 +15,8 @@ public class Maze {
     Scanner sc = new Scanner(System.in);
     int risp;
     int risp2;
+    Random r = new Random();
+    int rand;
     
     public Maze()
     {
@@ -24,8 +26,6 @@ public class Maze {
          risp2 = sc.nextInt();
          maze = new Cell[risp2][risp];
          Cell[] tmp = new Cell[risp];
-         Random r = new Random();
-         int rand;
          
          for (int i = 0;i < risp2; i++)
          {
@@ -65,24 +65,38 @@ public class Maze {
                      }
                  } 
              }
+             //for (Cell x : tmp)
+             //    System.out.println(x.content);
+             
              linkedlist.add(tmp);
+             for (int n = 0;n < risp; n++)
+             {
+               maze[i][n] = linkedlist.get(i)[n];
+             }
          }
     }
     
     public void stampa()
     {
-        for (int cont = 0;cont < risp2;cont++)
+        for(int x = 0;x < risp2; x++)
         {
-           for (int n = 0;n < risp; n++)
-           {
-               System.out.print(linkedlist.get(cont)[n].content);
-           }
-           System.out.print("\n");
+            for(int y = 0;y < risp; y++)
+            {
+                System.out.print(maze[x][y].content);
+            }
+            System.out.print("\n");
         }
-    }
+    }            
     
     public void PlaceMouse()
     {
-        
+        for (int y = 0;y < risp2; y++)
+        {
+            for (int x = 0;x < 5; x++)
+            {
+                rand = r.nextInt(5);
+                if (rand == 4 && maze[][])
+            }
+        }
     }
 }
